@@ -9,6 +9,7 @@ object Main {
     var winners: ArrayBuffer[RaceTurtle];
     var i=1;
     while(i<=4){
+      winners = ArrayBuffer[RaceTurtle];
       var x = -1;
       while(x<32/i){
         activeSeq = for(j <- 0 until 8) yield{
