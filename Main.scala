@@ -15,7 +15,7 @@ object Main {
           x+=1;
           turtles(x).asInstanceOf[RaceTurtle];
         }
-        winners = TurtleRace.race(activeSeq, window, "Tournament part " + i).to[ArrayBuffer];
+        winners += TurtleRace.race(activeSeq, window, "Tournament part " + i).take(4).to[ArrayBuffer];
       }
       turtles = winners.toIndexedSeq;
       i*=2;
@@ -23,6 +23,9 @@ object Main {
   }
 
   def randTurtle(window: RaceWindow, num: Int, name: String): RaceTurtle = {
-
+    val rand = (math.random*3).toInt;
+    if(rand == 0) colorTurtle(window, Point(window.startX, window.startY(num)), 0, true, new java.awt.Color.RED) extends Dizziness;
+    else if(rand == 1) colorTurtle(window, Point(window.startX, window.startY(num)), 0, true, new java.awt.Color.GREEN) extends AbsentMindedness;
+    else colorTurtle(window, Point(window.startX, window.startY(num)), 0, true, new java.awt.Color.BLUE) extends Mole;
   }
 }
