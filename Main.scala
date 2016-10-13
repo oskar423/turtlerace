@@ -21,6 +21,7 @@ object Main {
       turtles = winners.toIndexedSeq;
       i*=2;
     }
+    println(turtles);
   }
 
   def randTurtle(window: RaceWindow, num: Int, name: String): RaceTurtle = {
